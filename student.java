@@ -1,4 +1,0 @@
-nishi
-juli
-megha
-sapana
