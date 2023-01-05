@@ -1,5 +1,6 @@
 package com.example.TATA;
 
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class flight {
     @GetMapping("/myflight")
     public String getData(){
-        return "Please book your  Flightjhjjkhhkkjjhh ticket, Choose Your Fav Airlines Idigo";
+        return "Please book your  Flight ticket, Choose Your Fav Airlines Idigo";
     }
 
 }
