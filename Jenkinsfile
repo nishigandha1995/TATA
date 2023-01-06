@@ -41,3 +41,6 @@ pipeline {
                 echo 'Creating War Artifact'
                 sh 'java -version'
             }
+		}
+    }
+}
