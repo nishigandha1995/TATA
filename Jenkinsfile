@@ -64,5 +64,5 @@ pipeline {
                 sh 'java -version'
 			}
 		}
-    }
+	}
 }
