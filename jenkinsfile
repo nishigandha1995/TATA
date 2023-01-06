@@ -28,7 +28,6 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-
         stage('Code package') {
             steps {
                 echo 'Code packaging is in Progress!'
@@ -64,5 +63,5 @@ pipeline {
                 sh 'java -version'
 			}
 		}
-	}
+    }
 }
