@@ -59,24 +59,6 @@ pipeline {
               }
             }
         }
-        stage(' Docker Image Push to Amazon ECR') {
-           steps {
-              script {
-                 withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials', url:"https://552855432033.dkr.ecr.ap-south-1.amazonaws.com"]){
-                 sh """
-                 echo "List the docker images present in local"
-                 docker images
-                 echo "Tagging the Docker Image: In Progress"
-                 docker tag tata-ms:latest 552855432033.dkr.ecr.us-east-1.amazonaws.com/tata-ms:latest
-                 echo "Tagging the Docker Image: Completed"
-                 echo "Push Docker Image to ECR : In Progress"
-                 docker push 552855432033.dkr.ecr.us-east-1.amazonaws.com/tata-ms:latest
-                 echo "Push Docker Image to ECR : Completed"
-                 """
-                 }
-              }
-           }
-        }
         stage('Deploy into Kubernetes') {
             steps {
                 echo 'Docker Image Scanning Started'
