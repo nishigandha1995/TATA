@@ -49,7 +49,7 @@ pipeline {
         stage(' Docker push to Docker Hub') {
            steps {
               script {
-                 withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
+                 withCredentials([string(credentialsId: 'nishi01', variable: 'dockerhubCred')]){
                  sh 'docker login docker.io -u nishi01 -p ${dockerhubCred}'
                  echo "Push Docker Image to DockerHub : In Progress"
                  sh 'docker push nishi01/demo-ms:latest'
@@ -62,7 +62,7 @@ pipeline {
         stage(' Docker Image Push to Amazon ECR') {
            steps {
               script {
-                 withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials', url:"https://559220132560.dkr.ecr.ap-south-1.amazonaws.com"]){
+                 withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials', url:"https://552855432033.dkr.ecr.ap-south-1.amazonaws.com"]){
                  sh """
                  echo "List the docker images present in local"
                  docker images
